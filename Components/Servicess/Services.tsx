@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 
 type ServiceItem = {
     id: number;
@@ -62,7 +61,7 @@ const Services = () => {
             </div>
             <div className="flex mt-9 flex-wrap max-w-[80%] bg-black mx-auto justify-start gap-4">
                 {data.map((item) => (
-                    <Card
+                    <div
                         key={item.id}
                         className="relative w-[calc(25%-1rem)] bg-black text-white p-6 rounded-2xl border-0 shadow-2xs"
                     >
@@ -73,11 +72,11 @@ const Services = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <CardContent className="relative mt-[30] z-10">
+                        <div className="relative mt-[30] z-10">
                             <h2 className="text-lg font-bold">{item.title}</h2>
                             <p className="text-gray-400 text-sm mt-1">{item.description}</p>
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

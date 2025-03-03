@@ -130,6 +130,44 @@ const WorkUs = (props: Props) => {
                     <div className="w-[70%] rounded-xl border-2 border-gray-300 shadow-lg  bg-white relative">
                         <div className="">
                             <div className="">
+                                <br /><Marquee
+
+                                    velocity={12}
+                                    resetAfterTries={200}
+                                    scatterRandomly={false}
+                                    direction="ltr"
+                                    onInit={() => console.log('Marquee initialized')}
+                                    onFinish={() => console.log('Marquee finished')}
+                                >
+                                    {[
+
+                                        { role: 'Software Tester' },
+                                        { role: 'Project Manager' },
+                                        { role: 'DevOps Engineer' },
+                                        { role: 'Web Developer' },
+                                        { role: 'UI/UX Designer' },
+                                        { role: 'Content Writer' },
+                                        { role: 'QA Engineer' },
+                                        { role: 'Data Analyst' },
+                                    ].map((item, index) => (
+                                        <div
+                                            key={index}
+                                            className="flex items-center gap-4 p-4 bg-white shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2"
+                                        >
+                                            <div className="w-10 h-10 relative">
+                                                <Image
+                                                    src='/o.png'
+                                                    alt={item.role}
+                                                    layout="fill"
+                                                    className="object-cover rounded-full border-2 border-gray-300"
+                                                />
+                                            </div>
+                                            <span className="text-lg font-semibold text-gray-800">{item.role}</span>
+                                        </div>
+                                    ))}
+                                </Marquee>
+                                <br />
+
                                 <Marquee
                                     velocity={12}
                                     resetAfterTries={200}

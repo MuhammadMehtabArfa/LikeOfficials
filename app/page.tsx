@@ -1,9 +1,16 @@
 import First from "@/Components/Hero/First";
-import Image from "next/image";
-
+import FAQ from "@/components/sections/faq/default";
+import PricingPage from "@/Components/pricing/PricingPage";
+import Footer from "@/Components/shared/Footer";
+import Testimonials from "@/Components/shared/Testimonial";
 export default function Home() {
   return (
-    <><First/></>
-    
+    <><First />
+      <PricingPage />
+      <Testimonials />
+      <FAQ />
+      <Footer/>
+    </>
+
   );
 }

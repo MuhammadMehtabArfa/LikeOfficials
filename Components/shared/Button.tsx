@@ -1,4 +1,4 @@
-const Button = ({
+const Cbutton = ({
   text,
   link,
   className = '',
@@ -18,4 +18,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default Cbutton;

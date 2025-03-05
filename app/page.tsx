@@ -1,52 +1,94 @@
+'use client';
+
 import First from "@/Components/Hero/First";
 import FAQ from "@/Components/sections/faq/default";
 import PricingPage from "@/Components/pricing/PricingPage";
 import Footer from "@/Components/shared/Footer";
 import Testimonials from "@/Components/shared/Testimonial";
-import { CardStack, Card } from "@/Components/shared/CardAnimation"
 import Services from "@/Components/Servicess/Services";
 import { Album, BadgeDollarSign, Building2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useScroll } from "framer-motion";
+import Lenis from '@studio-freight/lenis'
+import { projects } from "@/utils/data";
+import Card from "@/Components/shared/PortfolioCards";
 
 export default function Home() {
+  const container = useRef(null);
+  const stackRef = useRef<HTMLDivElement>(null);
+  const [stackHeight, setStackHeight] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (stackRef.current) {
+        const stackHeight = stackRef.current.scrollHeight - window.innerHeight;
+        const progress = Math.min(1, window.scrollY / stackHeight);
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (stackRef.current) {
+      setStackHeight(stackRef.current.scrollHeight - window.innerHeight);
+    }
+  }, []);
+
   return (
     <>
       <First />
       <Services />
       <Testimonials />
-      <CardStack>
-        <Card 
-          title="Web Development Mastery"
-          description="Transform your digital presence with cutting-edge web solutions"
-          features={[
-            "Responsive Design",
-            "SEO Optimization",
-            "Performance Tuning",
-            "Cross-Browser Compatibility"
-          ]}
-          imageUrl="/web-development.png"
-          iconUrl={<Album className="w-4 h-4"/>}
-          iconText="Professional"
-        />
-        <Card 
-          title="E-Commerce Excellence"
-          description="Boost your online sales with our comprehensive e-commerce strategies"
-          features={[]}
-          imageUrl="/ecommerce.png"
-          iconUrl={<Building2 className="w-4 h-4"/>}
-          iconText="Business"
-        />
-        <Card 
-          title="Digital Marketing Insights"
-          description="Elevate your brand with data-driven marketing approaches that deliver measurable results and increase your online visibility"
-          features={[
-            "Social Media Marketing",
-            "Content Strategy"
-          ]}
-          imageUrl="/digital-marketing.png"
-          iconUrl={<BadgeDollarSign className="w-4 h-4"/>}
-          iconText="Premium"
-        />
-      </CardStack>
+      
+      <div 
+        ref={container} 
+        className="min-h-screen pt-20 relative bg-black"
+        style={{
+          background: `linear-gradient(135deg, 
+            #000000, 
+            #00008B, 
+            #0000FF, 
+            #FF69B4, 
+            #FFFFFF ${80 + scrollProgress * 20}%)`,
+          transition: 'background 0.3s ease-out',
+        }}
+      >
+        {projects.map((project, i) => {
+          const targetScale = 1 - ((projects.length - i) * 0.05);
+          return (
+            <Card 
+              ref={stackRef} 
+              key={`p_${i}`} 
+              i={i} 
+              {...project} 
+              progress={scrollYProgress} 
+              range={[i * .25, 1]} 
+              targetScale={targetScale}
+            />
+          );
+        })}
+      </div>
+      
       <PricingPage />
       <FAQ />
       <Footer />

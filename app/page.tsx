@@ -11,17 +11,17 @@ export default function Home() {
   return (
     <>
       <First />
-      <ResponsivePortfolioMarquee />
-      <WorkUs />
+      {/* <ResponsivePortfolioMarquee /> */}
+      {/* <WorkUs /> */}
 
-      {/* <Services />
+      <Services />
       <Testimonials />
       <CardStack> <div>Ali</div>
         <div>Aslam</div>
         <div>Akran</div></CardStack>
       <PricingPage />
       <FAQ />
-      <Footer /> */}
+      <Footer />
 
     </>
 

@@ -33,6 +33,7 @@ const ResponsivePortfolioMarquee: React.FC = () => {
                 velocity={32}
                 resetAfterTries={200}
                 scatterRandomly={false}
+                 
                 direction="rtl"
                 onInit={() => console.log('Marquee initialized')}
                 onFinish={() => console.log('Marquee finished')}

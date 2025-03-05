@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
-
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants/variants';
 type ServiceItem = {
     id: number;
     title: string;
@@ -12,71 +14,82 @@ const data: ServiceItem[] = [
         id: 1,
         title: 'Web Development',
         description: 'Build custom, high-performing websites using WordPress, Shopify, or custom tech stacks that align with your business goals.',
-        imageUrl: 'https://www.shutterstock.com/image-vector/web-development-line-icons-600w-1038015990.jpg'
+        imageUrl: '/web.png'
     },
     {
         id: 2,
         title: 'E-Commerce Solutions',
         description: 'Launch or scale your online store with optimized Shopify or WooCommerce development, ensuring seamless transactions and user-friendly navigation.',
-        imageUrl: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/e-commerce-shopping-website-icon.png'
+        imageUrl: '/ecommerece.png'
     },
     {
         id: 3,
         title: 'Custom Web Apps',
         description: 'Develop scalable and fully customized web applications using the latest technologies like React, Node.js, and more.',
-        imageUrl: 'https://www.shutterstock.com/image-vector/web-development-line-icons-600w-1038015990.jpg'
+        imageUrl: '/custom.png'
     },
     {
         id: 4,
         title: 'UI/UX Design',
         description: 'Create intuitive, user-friendly interfaces that enhance customer engagement and improve conversions.',
-        imageUrl: 'https://www.smashingmagazine.com/wp-content/uploads/2016/09/line-ux-icon-preview-opt.png'
+        imageUrl: '/responsive.png'
     },
     {
         id: 5,
         title: 'Performance Optimization',
         description: 'Speed up your website, improve SEO rankings, and ensure a seamless browsing experience with technical enhancements.',
-        imageUrl: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/improvement-performance-icon.png'
+        imageUrl: '/performance.png'
     },
     {
         id: 6,
         title: 'API Development & Integration',
         description: 'Integrate third-party tools, automate workflows, and enhance your website’s functionality with secure API solutions.',
-        imageUrl: 'https://www.shutterstock.com/image-vector/web-development-line-icons-600w-1038015990.jpg'
+        imageUrl: '/api.png'
     },
     {
         id: 7,
         title: 'Website Maintenance & Support',
         description: 'Keep your website updated, secure, and running smoothly with ongoing maintenance and technical support.',
-        imageUrl: 'https://www.shutterstock.com/image-vector/web-development-line-icons-600w-1038015990.jpg'
+        imageUrl: '/support.png'
     }
 ];
 
 const Services = () => {
     return (
-        <div className="w-full py-[10%] bg-black">
-            <div className="text-[30px] max-w-[40%] text-center mx-auto text-gray-500">
-                <span className="text-white font-bold">Why work with us? </span>
-                We streamline the development process by breaking projects into smaller, hyper-focused tasks for seamless execution.
+        <div className="w-full mt-[80px] py-[10%] bg-black">
+            <div className=" flex justify-center text-center mx-auto text-gray-500">
+                <h2 className="text-[15px] max-w-[80%] lg:max-w-[50%] mb-2 md:mb-7 lg:mb-13 xl:mb-17 text-center  md:text-[22px] lg:text-[30px]  font-bold">
+                    <span className="text-white">Discover Our Services  </span>
+                    <span className="text-gray-500">
+                        We deliver high-quality web solutions with a team of experienced developers, ensuring tailored functionality and seamless user experiences.
+                    </span>
+                </h2>
+
             </div>
-            <div className="flex mt-9 flex-wrap max-w-[80%] bg-black mx-auto justify-start gap-4">
+            <div className="flex mt- flex-wrap max-w-[80%] bg-black mx-auto justify-start gap-4">
                 {data.map((item) => (
-                    <div
+                    <motion.div
+                        variants={fadeIn("up", 0.2, 0.5)}
+                        initial="hidden"
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.7 }}
+
                         key={item.id}
-                        className="relative w-[calc(25%-1rem)] bg-black text-white p-6 rounded-2xl border-0 shadow-2xs"
+                        className="relative lg:w-[calc(25%-1rem)] md:w-[calc(33%-1rem)] sm:w-[calc(50%-1rem)] bg-black text-white p-6 rounded-2xl border-0 shadow-2xs"
                     >
-                        <div className="w-16 h-16 mx-auto mb-4">
-                            <img
+                        <div className="lg:w-9 w-7 h-7 lg:h-9 bg-gray-400 rounded-md  mb-4 relative left-0 top-0">
+                            <Image
                                 src={item.imageUrl}
                                 alt={item.title}
-                                className="w-full h-full object-contain"
+                                layout='fill'
+                                className="p-1 object-contain"
                             />
                         </div>
                         <div className="relative mt-[30] z-10">
-                            <h2 className="text-lg font-bold">{item.title}</h2>
-                            <p className="text-gray-400 text-sm mt-1">{item.description}</p>
+                            <h2 className="lg:text-lg text-sm md:text-base font-bold">{item.title}</h2>
+                            <p className="text-gray-400 text-xs lg:text-base md:text-sm mt-1">{item.description}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -21,7 +21,7 @@ const WorkUs = (props: Props) => {
 
 
 
-                    <div className="lg:w-[30%] w-full rounded-xl border-2 border-gray-300 shadow-lg p-6 items-center bg-white relative">
+                    <div className="lg:w-[30%] w-full rounded-4xl overflow-hidden  border-2 border-gray-300 shadow-lg p-6 items-center bg-white relative">
                         <motion.div
                             variants={fadeIn("right", 0.2, 0.5)}
                             initial="hidden"
@@ -42,7 +42,7 @@ const WorkUs = (props: Props) => {
                         </p>
                     </div>
 
-                    <div className="lg:w-[70%] rounded-xl border-2 border-gray-300 shadow-lg p-6 bg-white relative">
+                    <div className="lg:w-[70%] rounded-4xl overflow-hidden  border-2 border-gray-300 shadow-lg p-6 bg-white relative">
                         <div className="hidden md:block">  <div className="absolute inset-0 pointer-events-none">
                             <motion.div variants={fadeIn("up", 0.2, 0.3)}
                                 initial="hidden"
@@ -165,9 +165,9 @@ const WorkUs = (props: Props) => {
                 </div>
 
                 <div className="w-full flex flex-col lg:flex-row gap-3 my-10">
-                    <div className="lg:w-[70%] w-full  rounded-xl border-2 border-gray-300 shadow-lg  items-center bg-white relative">
+                    <div className="lg:w-[70%] w-full  rounded-4xl overflow-hidden border-2 border-gray-300 shadow-lg  items-center bg-white relative">
                         <div className="">
-                            <div className=" hidden mt-[70px] md:flex flex-col gap-12">
+                            <div className=" hidden mt-[70px] rounded-4xl md:flex flex-col gap-12">
                                 <div className="absolute top-0 left-0 h-full w-40 opacity-60 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
                                 <div className="absolute top-0 right-0 h-full w-40 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
                                 <motion.div variants={fadeIn("up", 0.3, 0.5)}
@@ -192,9 +192,9 @@ const WorkUs = (props: Props) => {
                                         ].map((item, index) => (
                                             <div
                                                 key={index}
-                                                className={`flex items-center gap-4 p-4 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
+                                                className={`flex items-center gap-3 p-2 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
                                             >
-                                                <div className=" md:w-14 md:h-14 lg:w-17 lg:h-17 relative">
+                                                <div className=" md:w-13 md:h-13 lg:w-16 lg:h-16 relative">
                                                     <Image
                                                         src={item.avatar}
                                                         alt={item.role}
@@ -229,9 +229,9 @@ const WorkUs = (props: Props) => {
                                         ].map((item, index) => (
                                             <div
                                                 key={index}
-                                                className={`flex items-center gap-4 p-4 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
+                                                className={`flex items-center gap-4 p-3 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
                                             >
-                                                <div className=" md:w-14 md:h-14 lg:w-17 lg:h-17 relative">
+                                                <div className=" md:w-13 md:h-13 lg:w-16 lg:h-16 relative">
                                                     <Image
                                                         src={item.avatar}
                                                         alt={item.role}
@@ -264,7 +264,7 @@ const WorkUs = (props: Props) => {
                     </div>
 
 
-                    <div className="lg:w-[30%] w-full rounded-xl overflow-hidden border-2 border-gray-300 shadow-lg p-6 flex gap-7 lg:flex-col items-center justify-center bg-white relative">
+                    <div className="lg:w-[30%] w-full rounded-4xl overflow-hidden  overflow-hidden border-2 border-gray-300 shadow-lg p-6 flex gap-7 lg:flex-col items-center justify-center bg-white relative">
                         <motion.div variants={fadeIn("down", 0.3, 0.5)}
                             initial="hidden"
                             whileInView={"show"}

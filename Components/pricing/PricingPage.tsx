@@ -432,7 +432,7 @@ export default function PricingPage() {
                                         ? 'text-white dark:text-black'
                                         : 'text-black dark:text-white',
                                     'mt-6  text-md pb-[-20px]  xl:mt-10',
-                                )}>What's included:</h4>
+                                )}>What&apos;s included:</h4>
                                 <ul
                                     className={cn(
                                         tier.featured

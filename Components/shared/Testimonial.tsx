@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./Container";
+
 
 type Testimonial = {
     id: number;
@@ -8,7 +8,7 @@ type Testimonial = {
     image: string;
 };
 
-const testimonials = [
+const testimonials:Testimonial[] = [
     {
         id: 1,
         name: "Lauren Martin",

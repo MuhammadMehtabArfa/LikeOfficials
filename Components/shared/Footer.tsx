@@ -1,15 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
-type Props = {}
+import Link from 'next/link'
 
-const Footer = (props: Props) => {
+
+const Footer = () => {
     return (
         <div>
 
             <footer className=" mt-[70px]   m-4">
                 <div className="w-full max-w-[90%] bg-gray-100 rounded-4xl mx-auto p-4 md:py-8">
                     <div className="sm:flex sm:items-center sm:justify-between mx-12">
-                        <a href="/" className="inline-block">
+                        <Link href="/" className="inline-block">
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
@@ -18,7 +19,7 @@ const Footer = (props: Props) => {
                                 priority
                                 className="w-[130px] h-[100px] object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
                             />
-                        </a>
+                        </Link>
 
                         <ul className="flex flex-col  gap-[20px] mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                             <li>

@@ -3,8 +3,8 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "@/components/ui/accordion";
-import Link from "next/link";
+} from "@/Components/ui/accordion";
+
 
 export default function FAQ() {
   return (
@@ -42,18 +42,18 @@ export default function FAQ() {
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-4 max-w-[640px] text-muted-foreground">
-                Yes! Whether it's a full website build or a minor update, we're here to help. Let us know your requirements, and we'll get it done.
+                Yes! Whether it&apos;s a full website build or a minor update, we&apos;re here to help. Let us know your requirements, and we&apos;ll get it done.
               </p>
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-4" className="border px-3 mb-3 border-gray-300 rounded-lg">
             <AccordionTrigger className="no-underline">
-              What if I'm not satisfied with the final website?
+              What if I&apos;m not satisfied with the final website?
             </AccordionTrigger>
             <AccordionContent>
               <p className="mb-4 max-w-[640px] text-muted-foreground">
-                We offer revisions until you're happy with the result. Our process ensures we work closely with you to deliver exactly what you need.
+                We offer revisions until you&apos;re happy with the result. Our process ensures we work closely with you to deliver exactly what you need.
               </p>
             </AccordionContent>
           </AccordionItem>

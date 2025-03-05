@@ -49,7 +49,7 @@ const Rotating = () => {
 
 
                 className="lg:max-w-[50%] text-base md:text-lg lg:text-xl mt-7">Get a stunning, high-performing website from a top-tier dev team with flexible, project-based pricing.
-                We'll handle everything from concept to launch.</motion.div>
+                We&apos;ll handle everything from concept to launch.</motion.div>
 
             <motion.div variants={fadeIn("up", 0.3, 0.8)}
                 initial="hidden"

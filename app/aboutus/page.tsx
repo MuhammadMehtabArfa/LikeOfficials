@@ -1,8 +1,8 @@
 import React from 'react'
 
-type Props = {}
+// type Props = {}
 
-const page = (props: Props) => {
+const page = () => {
     return (
         <>
             <div className="bg-white">
@@ -13,7 +13,7 @@ const page = (props: Props) => {
                 <section className="text-center py-12 px-4">
                     <h2 className="text-2xl font-bold">Development Partner for Startups, Agencies & Brands</h2>
                     <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
-                        Get a stunning, high-performing website from a top-tier dev team with flexible, project-based pricing. We'll handle everything from concept to launch.
+                        Get a stunning, high-performing website from a top-tier dev team with flexible, project-based pricing. We&apos;ll handle everything from concept to launch.
                     </p>
                     <div className="flex justify-center space-x-8 mt-8">
                         <a href="#" className="bg-black text-white px-6 py-3 rounded-lg">View Packages</a>

@@ -6,9 +6,9 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants/variants'
 import FolderAnimation from '../shared/FolderAnimation'
-type Props = {}
 
-const WorkUs = (props: Props) => {
+
+const WorkUs = () => {
     return (
         <>
             <Container >

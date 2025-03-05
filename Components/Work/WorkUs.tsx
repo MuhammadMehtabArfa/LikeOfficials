@@ -3,36 +3,59 @@ import React from 'react'
 import Container from '../shared/Container'
 import Marquee from 'react-marquee-slider'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants/variants'
 import FolderAnimation from '../shared/FolderAnimation'
 type Props = {}
 
 const WorkUs = (props: Props) => {
     return (
         <>
-            <Container>
-                <div className="w-full flex gap-3 my-10">
-                    <div className="w-[30%] rounded-xl border-2 border-gray-300 shadow-lg p-6 bg-white relative">
+            <Container >
+                <div className="flex my-[80px] items-center justify-center"> <h2 className="text-[15px] lg:max-w-[60%] text-center  md:text-[22px] lg:text-[30px] font-bold">
+                    <span className="text-black">Why work with us?</span>
+                    <span className="text-gray-500">We streamline the development process by breaking projects into smaller, hyper-focused tasks for seamless execution.</span>
+                </h2></div>
+                <div className="w-full flex flex-col lg:flex-row gap-3 my-10 mt-[60px]">
 
-                        <FolderAnimation />
 
-                        <h2 className="text-2xl mt-[12%] font-bold text-center text-gray-800 mb-2">Fast TurnAround</h2>
-                        <p className="text-gray-600 max-w-sm mx-auto text-center">
+
+
+                    <div className="lg:w-[30%] w-full rounded-xl border-2 border-gray-300 shadow-lg p-6 items-center bg-white relative">
+                        <motion.div
+                            variants={fadeIn("right", 0.2, 0.5)}
+                            initial="hidden"
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0.7 }}
+
+
+
+                            className="hidden md:flex justify-center items-center">
+                            <FolderAnimation />
+                        </motion.div>
+
+
+                        <h2 className=" text-base sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl lg:mt-[12%] font-bold text-center text-gray-800 mb-2">Fast TurnAround</h2>
+                        <p className="text-sm sm:text-xs md:text-base lg:text-md xl:text-lg  text-gray-600 max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto text-center">
                             Stay in the loop with real-time updates and direct collaboration, ensuring your project runs smoothly
                             from start to finish.
                         </p>
                     </div>
 
-                    <div className="w-[70%] rounded-xl border-2 border-gray-300 shadow-lg p-6 bg-white relative">
-                        {/* Background messages */}
-                        <div className="absolute inset-0 pointer-events-none">
-                            <div className="text-gray-400 text-sm opacity-50 absolute top-5 left-5">
+                    <div className="lg:w-[70%] rounded-xl border-2 border-gray-300 shadow-lg p-6 bg-white relative">
+                        <div className="hidden md:block">  <div className="absolute inset-0 pointer-events-none">
+                            <motion.div variants={fadeIn("up", 0.2, 0.3)}
+                                initial="hidden"
+                                whileInView={"show"}
+                                viewport={{ once: false, amount: 0.7 }}
+                                className="text-gray-400 text-sm opacity-50 absolute top-15 right-5">
                                 <div className="flex items-start">
                                     <div className="w-[25px] h-[25px] relative">
                                         <Image
-                                            src='/bg1.png'
+                                            src='/green.png'
                                             alt="image"
                                             layout="fill"
-                                            className="object-cover p-[2px]"
+                                            className="object-cover opacity-50 p-[2px]"
                                         />
                                     </div>
                                     <div className="flex-1 ml-4">
@@ -45,13 +68,16 @@ const WorkUs = (props: Props) => {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="text-gray-400 text-sm opacity-50 absolute top-1/2 left-5">
+                            <motion.div variants={fadeIn("up", 0.3, 0.3)}
+                                initial="hidden"
+                                whileInView={"show"}
+                                viewport={{ once: false, amount: 0.7 }} className="text-gray-400 text-sm opacity-50 absolute top-1/2 left-5">
                                 <div className="flex items-start">
-                                    <div className="w-[25px] h-[25px] relative">
+                                    <div className="w-[25px] h-[25px] opacity-50 relative">
                                         <Image
-                                            src='/bg2.png'
+                                            src='/orange.png'
                                             alt="image"
                                             layout="fill"
                                             className="object-cover p-[2px]"
@@ -67,11 +93,40 @@ const WorkUs = (props: Props) => {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
-                        <span>
-                            <div className="max-w-md mt-2  bg-white shadow-lg rounded-lg p-4 relative">
+                            <span>
+                                <motion.div variants={fadeIn("up", 0.4, 0.3)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }} className="max-w-md mt-2  bg-white shadow-lg rounded-lg p-4 relative">
+                                    <div className="flex items-start">
+                                        <div className="w-[25px] h-[25px] relative">
+                                            <Image
+                                                src='/blue.png'
+                                                alt="image"
+                                                layout="fill"
+                                                className="object-cover "
+                                            />
+                                        </div>
+                                        <div className="flex-1 ml-4">
+                                            <div className="flex justify-between items-center">
+                                                <h3 className="text-md font-semibold">Jhon</h3>
+                                                <span className="text-sm text-gray-500">2:46 PM</span>
+                                            </div>
+                                            <p className="text-gray-700 mt-2">
+                                                Hey there! Any Update
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                            </span>
+                            <motion.div variants={fadeIn("up", 0.5, 0.3)}
+                                initial="hidden"
+                                whileInView={"show"}
+                                viewport={{ once: false, amount: 0.7 }} className="max-w-full mt-2 ml-[40%] bg-white shadow-lg rounded-lg p-4 relative">
                                 <div className="flex items-start">
                                     <div className="w-[25px] h-[25px] relative">
                                         <Image
@@ -83,145 +138,148 @@ const WorkUs = (props: Props) => {
                                     </div>
                                     <div className="flex-1 ml-4">
                                         <div className="flex justify-between items-center">
-                                            <h3 className="text-md font-semibold">Jhon</h3>
+                                            <h3 className="text-md font-semibold">Like Officials</h3>
                                             <span className="text-sm text-gray-500">2:46 PM</span>
                                         </div>
                                         <p className="text-gray-700 mt-2">
-                                            Hey there! Any Update
+                                            Hey there! Will deliver you on time
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div></div>
+                        {/* Background messages */}
 
-                        </span>
-                        <div className="max-w-md mt-2 ml-[40%] bg-white shadow-lg rounded-lg p-4 relative">
-                            <div className="flex items-start">
-                                <div className="w-[25px] h-[25px] relative">
-                                    <Image
-                                        src='/o.png'
-                                        alt="image"
-                                        layout="fill"
-                                        className="object-cover p-[2px]"
-                                    />
-                                </div>
-                                <div className="flex-1 ml-4">
-                                    <div className="flex justify-between items-center">
-                                        <h3 className="text-md font-semibold">Like Officials</h3>
-                                        <span className="text-sm text-gray-500">2:46 PM</span>
-                                    </div>
-                                    <p className="text-gray-700 mt-2">
-                                        Hey there! Will deliver you on time
-                                    </p>
-                                </div>
-                            </div>
+
+                        <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-12">
+                            <h2 className="text-base sm:text-md md:text-lg lg:text-xl xl:text-2xl  lg:mt-12 font-bold text-center text-gray-800 mb-4">
+                                Expert Development Team
+                            </h2>
+                            <p className="text-sm sm:text-xs md:text-base lg:text-md xl:text-lg text-gray-600 max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto text-center">
+                                We bring together a team of skilled developers specializing in WordPress, Shopify, and custom web solutions to deliver high-quality, tailored websites that meet your business needs.
+                            </p>
                         </div>
 
-                        <h2 className="text-2xl mt-[12%] font-bold text-center text-gray-800 mb-2 ">Efficient Communication</h2>
-                        <p className="text-gray-600 max-w-sm mx-auto text-center">
-                            Stay in the loop with real-time updates and direct collaboration, ensuring your project runs smoothly
-                            from start to finish.
-                        </p>
                     </div>
 
 
                 </div>
 
-                <div className="w-full flex gap-3 my-10">
-                    <div className="w-[70%] rounded-xl border-2 border-gray-300 shadow-lg  bg-white relative">
+                <div className="w-full flex flex-col lg:flex-row gap-3 my-10">
+                    <div className="lg:w-[70%] w-full  rounded-xl border-2 border-gray-300 shadow-lg  items-center bg-white relative">
                         <div className="">
-                            <div className="">
-                                <br /><Marquee
+                            <div className=" hidden mt-[70px] md:flex flex-col gap-12">
+                                <div className="absolute top-0 left-0 h-full w-40 opacity-60 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+                                <div className="absolute top-0 right-0 h-full w-40 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+                                <motion.div variants={fadeIn("up", 0.3, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }}> <Marquee
+                                        velocity={29}
+                                        resetAfterTries={200}
+                                        scatterRandomly={false}
+                                        direction="ltr"
+                                        onInit={() => console.log('Marquee initialized')}
+                                        onFinish={() => console.log('Marquee finished')}
+                                    >
+                                        {[
+                                            { role: 'UI/UX Designer', color: 'bg-yellow-200', avatar: '/yellow.png' },
+                                            { role: 'Content Writer', color: 'bg-pink-100', avatar: '/beige.png' },
+                                            { role: 'QA Engineer', color: 'bg-blue-400', avatar: '/blue1.png' },
+                                            { role: 'Software Tester', color: 'bg-green-300', avatar: '/green.png' },
+                                            { role: 'Project Manager', color: 'bg-blue-200', avatar: '/blue.png' },
+                                            { role: 'DevOps Engineer', color: 'bg-orange-300', avatar: '/orange.png' },
+                                            { role: 'Web Developer', color: 'bg-pink-200', avatar: '/pink.png' },
+                                        ].map((item, index) => (
+                                            <div
+                                                key={index}
+                                                className={`flex items-center gap-4 p-4 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
+                                            >
+                                                <div className=" md:w-14 md:h-14 lg:w-17 lg:h-17 relative">
+                                                    <Image
+                                                        src={item.avatar}
+                                                        alt={item.role}
+                                                        layout="fill"
+                                                        className="object-cover rounded-full border-2 border-black"
+                                                    />
+                                                </div>
 
-                                    velocity={12}
-                                    resetAfterTries={200}
-                                    scatterRandomly={false}
-                                    direction="ltr"
-                                    onInit={() => console.log('Marquee initialized')}
-                                    onFinish={() => console.log('Marquee finished')}
-                                >
-                                    {[
-
-                                        { role: 'Software Tester' },
-                                        { role: 'Project Manager' },
-                                        { role: 'DevOps Engineer' },
-                                        { role: 'Web Developer' },
-                                        { role: 'UI/UX Designer' },
-                                        { role: 'Content Writer' },
-                                        { role: 'QA Engineer' },
-                                        { role: 'Data Analyst' },
-                                    ].map((item, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center gap-4 p-4 bg-white shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2"
-                                        >
-                                            <div className="w-10 h-10 relative">
-                                                <Image
-                                                    src='/o.png'
-                                                    alt={item.role}
-                                                    layout="fill"
-                                                    className="object-cover rounded-full border-2 border-gray-300"
-                                                />
+                                                <span className="text-lg font-semibold text-gray-800">{item.role}</span>
                                             </div>
-                                            <span className="text-lg font-semibold text-gray-800">{item.role}</span>
-                                        </div>
-                                    ))}
-                                </Marquee>
-                                <br />
-
-                                <Marquee
-                                    velocity={12}
-                                    resetAfterTries={200}
-                                    scatterRandomly={false}
-                                    direction="ltr"
-                                    onInit={() => console.log('Marquee initialized')}
-                                    onFinish={() => console.log('Marquee finished')}
-                                >
-                                    {[
-                                        { role: 'Web Developer' },
-                                        { role: 'UI/UX Designer' },
-                                        { role: 'Content Writer' },
-                                        { role: 'QA Engineer' },
-                                        { role: 'Software Tester' },
-                                        { role: 'Project Manager' },
-                                        { role: 'DevOps Engineer' },
-                                        { role: 'Data Analyst' },
-                                    ].map((item, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center gap-4 p-4 bg-white shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2"
-                                        >
-                                            <div className="w-10 h-10 relative">
-                                                <Image
-                                                    src='/o.png'
-                                                    alt={item.role}
-                                                    layout="fill"
-                                                    className="object-cover rounded-full border-2 border-gray-300"
-                                                />
+                                        ))}
+                                    </Marquee></motion.div>
+                                <motion.div variants={fadeIn("up", 0.3, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }}> <Marquee
+                                        velocity={19}
+                                        resetAfterTries={200}
+                                        scatterRandomly={false}
+                                        direction="rtl"
+                                        onInit={() => console.log('Marquee initialized')}
+                                        onFinish={() => console.log('Marquee finished')}
+                                    >
+                                        {[
+                                            { role: 'Software Tester', color: 'bg-green-300', avatar: '/green.png' },
+                                            { role: 'Project Manager', color: 'bg-blue-200', avatar: '/blue.png' },
+                                            { role: 'DevOps Engineer', color: 'bg-orange-300', avatar: '/orange.png' },
+                                            { role: 'Web Developer', color: 'bg-pink-200', avatar: '/pink.png' },
+                                            { role: 'UI/UX Designer', color: 'bg-yellow-200', avatar: '/yellow.png' },
+                                            { role: 'Content Writer', color: 'bg-pink-100', avatar: '/beige.png' },
+                                            { role: 'QA Engineer', color: 'bg-blue-400', avatar: '/blue1.png' },
+                                        ].map((item, index) => (
+                                            <div
+                                                key={index}
+                                                className={`flex items-center gap-4 p-4 ${item.color} shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out mx-2`}
+                                            >
+                                                <div className=" md:w-14 md:h-14 lg:w-17 lg:h-17 relative">
+                                                    <Image
+                                                        src={item.avatar}
+                                                        alt={item.role}
+                                                        layout="fill"
+                                                        className="object-cover rounded-full border-2 border-black"
+                                                    />
+                                                </div>
+                                                <span className="text-lg font-semibold text-gray-800">{item.role}</span>
                                             </div>
-                                            <span className="text-lg font-semibold text-gray-800">{item.role}</span>
-                                        </div>
-                                    ))}
-                                </Marquee>
+                                        ))}
+                                    </Marquee>
+                                </motion.div>
+
+
                             </div>
 
 
                         </div>
 
-                        <span><h2 className="text-2xl mt-[12%] font-bold text-center text-gray-800 mb-2 ">Expert Development Team</h2>
-                            <p className="text-gray-600 max-w-sm mx-auto text-center">
-                                We bring together a team of skilled developers specializing in WordPress, Shopify, and custom web
-                                solutions to deliver high-quality, tailored websites that meet your business needs.
-                            </p></span>
+
+                        <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-12">
+                            <h2 className="text-base sm:text-md md:text-lg lg:text-xl xl:text-2xl  lg:mt-12 font-bold text-center text-gray-800 mb-4">
+                                Expert Development Team
+                            </h2>
+                            <p className="text-sm sm:text-xs md:text-base lg:text-md xl:text-lg text-gray-600 max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto text-center">
+                                We bring together a team of skilled developers specializing in WordPress, Shopify, and custom web solutions to deliver high-quality, tailored websites that meet your business needs.
+                            </p>
+                        </div>
+
                     </div>
 
 
-                    <div className="w-[30%] rounded-xl border-2 border-gray-300 shadow-lg  bg-white relative">
-                        <div className="bg-white p-6 shadow-2xl ml-12 rounded-lg max-w-lg">
-                            <div className="text-2xl font-bold mb-4 text-red-500">
+                    <div className="lg:w-[30%] w-full rounded-xl overflow-hidden border-2 border-gray-300 shadow-lg p-6 flex gap-7 lg:flex-col items-center justify-center bg-white relative">
+                        <motion.div variants={fadeIn("down", 0.3, 0.5)}
+                            initial="hidden"
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0.7 }} className="bg-white p-6  shadow-2xl lg:ml-12 hidden md:block rounded-lg ">
+                            <motion.div variants={fadeIn("left", 0.3, 0.5)}
+                                initial="hidden"
+                                whileInView={"show"}
+                                viewport={{ once: false, amount: 0.7 }} className=" text-base sm:text-md md:text-lg lg:text-lg xl:text-xl font-bold mb-4 text-red-500">
                                 Say no to
-                            </div>
+                            </motion.div>
                             <ul className="space-y-4">
-                                <li className="flex items-start">
+                                <motion.div variants={fadeIn("left", 0.3, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }} className="flex items-start">
                                     <span className="w-6 h-6 mr-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 467.36">
                                             <g fill-rule="nonzero">
@@ -230,8 +288,11 @@ const WorkUs = (props: Props) => {
                                             </g>
                                         </svg>
                                     </span>
-                                    Endless meetings                                </li>
-                                <li className="flex items-start">
+                                    Endless meetings                                </motion.div >
+                                <motion.div variants={fadeIn("right", 0.4, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }} className="flex items-start">
                                     <span className="w-6 h-6 mr-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 467.36">
                                             <g fill-rule="nonzero">
@@ -241,8 +302,11 @@ const WorkUs = (props: Props) => {
                                         </svg>
                                     </span>
                                     Micromanagement
-                                </li>
-                                <li className="flex items-start">
+                                </motion.div>
+                                <motion.div variants={fadeIn("left", 0.5, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }} className="flex items-start">
                                     <span className="w-6 h-6 mr-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 467.36">
                                             <g fill-rule="nonzero">
@@ -252,8 +316,11 @@ const WorkUs = (props: Props) => {
                                         </svg>
                                     </span>
                                     High cost hiring
-                                </li>
-                                <li className="flex items-start">
+                                </motion.div>
+                                <motion.div variants={fadeIn("right", 0.7, 0.5)}
+                                    initial="hidden"
+                                    whileInView={"show"}
+                                    viewport={{ once: false, amount: 0.7 }} className="flex items-start">
                                     <span className="w-6 h-6 mr-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 467.36">
                                             <g fill-rule="nonzero">
@@ -262,13 +329,13 @@ const WorkUs = (props: Props) => {
                                             </g>
                                         </svg>
                                     </span>
-                                    Long-term contracts                                </li>
+                                    Long-term contracts                                </motion.div>
                             </ul>
-                        </div>
+                        </motion.div>
 
 
-                        <div className='p-6'><h2 className="text-2xl mt-[12%] font-bold text-center text-gray-800 mb-2 ">Flexible & Scalable</h2>
-                            <p className="text-gray-600  max-w-sm mx-auto text-center">
+                        <div className='py-6'><h2 className=" text-base sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl lg:mt-[12%] font-bold text-center text-gray-800 mb-2 ">Flexible & Scalable</h2>
+                            <p className="text-sm sm:text-xs md:text-base lg:text-md xl:text-lg  text-gray-600 max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto text-center">
                                 Stay in the loop with real-time updates and direct collaboration, ensuring your project runs smoothly
                                 from start to finish.
                             </p></div>

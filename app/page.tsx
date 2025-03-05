@@ -5,19 +5,23 @@ import Services from "@/Components/Servicess/Services";
 import Footer from "@/Components/shared/Footer";
 import Testimonials from "@/Components/shared/Testimonial";
 import WorkUs from "@/Components/Work/WorkUs";
+import ResponsivePortfolioMarquee from "@/Components/Portfolio Marquee/ResponsivePortfolioMarquee";
 import { Card, CardStack } from "@/Components/shared/CardAnimation"
 export default function Home() {
   return (
-    <><First />
+    <>
+      <First />
+      <ResponsivePortfolioMarquee />
       <WorkUs />
-      <Services />
+
+      {/* <Services />
       <Testimonials />
       <CardStack> <div>Ali</div>
         <div>Aslam</div>
         <div>Akran</div></CardStack>
       <PricingPage />
       <FAQ />
-      <Footer />
+      <Footer /> */}
 
     </>
 

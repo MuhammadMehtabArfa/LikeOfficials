@@ -1,4 +1,4 @@
-const Cbutton = ({
+const Button = ({
   text,
   link,
   className = '',
@@ -10,7 +10,7 @@ const Cbutton = ({
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <button
-        className={`px-6 py-3 rounded-full opacity-100 border-0 ${className}`}
+        className={`px-6 py-3 rounded-full bg-black text-white hover:bg-white hover:text-black opacity-100 border-0 ${className}`}
       >
         {text}
       </button>
@@ -18,4 +18,4 @@ const Cbutton = ({
   );
 };
 
-export default Cbutton;
+export default Button;

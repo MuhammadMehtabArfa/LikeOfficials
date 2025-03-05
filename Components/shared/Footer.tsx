@@ -13,14 +13,14 @@ const Footer = (props: Props) => {
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
-                                width={130}
-                                height={100}
+                                width={160}
+                                height={120}
                                 priority
                                 className="w-[130px] h-[100px] object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
                             />
                         </a>
 
-                        <ul className="flex flex-wrap items-center gap-[80px] mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                        <ul className="flex flex-col  gap-[20px] mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                             <li>
                                 <a href="#" className="hover:translate-y-1.5 hover:text-black me-4 md:me-6">About</a>
                             </li>
@@ -32,6 +32,12 @@ const Footer = (props: Props) => {
                             </li>
                             <li>
                                 <a href="#" className="hover:translate-y-1.5 hover:text-black">Testimonials</a>
+                            </li>
+                            <li>
+                                <a href="#" className="hover:translate-y-1.5 hover:text-black me-4 md:me-6">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#" className="hover:translate-y-1.5 hover:text-black">Contact</a>
                             </li>
                         </ul>
                     </div>
